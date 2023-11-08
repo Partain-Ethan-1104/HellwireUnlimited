@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class WeaponMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    
     public Camera cam;
-    
-    private Vector2 mousePos;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-    }
+        // Get the mouse position in world coordinates
+        Vector3 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
 
-    private void FixedUpdate()
-    {
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        // Calculate the direction from the weapon to the mouse
+        Vector3 direction = mousePosition - transform.position;
+
+        // Calculate the angle in degrees
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotate the weapon relative to the player's rotation
+        transform.rotation = Quaternion.Euler(0, 0, angle-90f);
     }
 }
