@@ -29,4 +29,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+    //Below is used to change the scene to the next room in the level.
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Level Swapper")
+        {
+            LevelSwapper.Instance.sceneToMoveTo();
+        }
+    }
 }

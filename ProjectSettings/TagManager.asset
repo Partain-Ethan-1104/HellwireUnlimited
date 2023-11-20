@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Level Swapper
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Map
   - Water
   - UI
   - player
@@ -41,4 +42,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 1791102167
+    locked: 0
+  - name: Player and Enemies
+    uniqueID: 3935238459
+    locked: 0
+  - name: Weapons
+    uniqueID: 3087380123
+    locked: 0
+  - name: Bullets and FX
+    uniqueID: 497007109
+    locked: 0
+  - name: Room Objects
+    uniqueID: 3552567851
     locked: 0
