@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector2 movement;
 
+    public int roomNumber;
 
     // Update is called once per frame
     void Update()
@@ -32,9 +33,13 @@ public class PlayerMovement : MonoBehaviour
     //Below is used to change the scene to the next room in the level.
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Level Swapper")
+        if (collision.gameObject.tag == "Level Swapper 1")
         {
-            LevelSwapper.Instance.sceneToMoveTo();
+            LevelSwapper.Instance.sceneToMoveTo2();
+        }
+        if(collision.gameObject.tag == "Level Swapper 2")
+        {
+            LevelSwapper.Instance.sceneToMoveTo3();
         }
     }
 }

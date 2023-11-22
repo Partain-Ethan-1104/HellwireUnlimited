@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - Level Swapper
+  - Level Swapper 1
+  - Level Swapper 2
   layers:
   - Default
   - TransparentFX

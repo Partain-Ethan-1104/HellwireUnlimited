@@ -33,8 +33,12 @@ public class LevelSwapper : MonoBehaviour
         
     }
 
-    public void sceneToMoveTo()
+    public void sceneToMoveTo2()
     {
         SceneManager.LoadScene("Level 2");
+    }
+    public void sceneToMoveTo3()
+    {
+        SceneManager.LoadScene("Level 3");
     }
 }
