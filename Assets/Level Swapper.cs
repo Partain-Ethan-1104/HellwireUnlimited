@@ -63,4 +63,9 @@ public class LevelSwapper : MonoBehaviour
         SceneManager.LoadScene("Level 7");
         print("Level 7 Loaded");
     }
+    public void sceneToMoveTo9()
+    {
+        SceneManager.LoadScene("Level 9 Boss");
+        print("Level 9 Loaded");
+    }
 }

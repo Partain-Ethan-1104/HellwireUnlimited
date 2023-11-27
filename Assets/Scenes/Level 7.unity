@@ -1033,7 +1033,7 @@ GameObject:
   - component: {fileID: 333647946}
   m_Layer: 9
   m_Name: Level Swapper
-  m_TagString: Level Swapper 6
+  m_TagString: Level Swapper 7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

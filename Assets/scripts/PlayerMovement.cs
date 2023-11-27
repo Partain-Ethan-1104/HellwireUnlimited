@@ -57,5 +57,9 @@ public class PlayerMovement : MonoBehaviour
         {
             LevelSwapper.Instance.sceneToMoveTo7();
         }
+        if (collision.gameObject.tag == "Level Swapper 7")
+        {
+            LevelSwapper.Instance.sceneToMoveTo9();
+        }
     }
 }
