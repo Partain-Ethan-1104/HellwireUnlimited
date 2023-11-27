@@ -37,9 +37,25 @@ public class PlayerMovement : MonoBehaviour
         {
             LevelSwapper.Instance.sceneToMoveTo2();
         }
-        if(collision.gameObject.tag == "Level Swapper 2")
+        if (collision.gameObject.tag == "Level Swapper 2")
         {
             LevelSwapper.Instance.sceneToMoveTo3();
+        }
+        if (collision.gameObject.tag == "Level Swapper 3")
+        {
+            LevelSwapper.Instance.sceneToMoveTo4();
+        }
+        if (collision.gameObject.tag == "Level Swapper 4")
+        {
+            LevelSwapper.Instance.sceneToMoveTo5();
+        }
+        if (collision.gameObject.tag == "Level Swapper 5")
+        {
+            LevelSwapper.Instance.sceneToMoveTo6();
+        }
+        if (collision.gameObject.tag == "Level Swapper 6")
+        {
+            LevelSwapper.Instance.sceneToMoveTo7();
         }
     }
 }

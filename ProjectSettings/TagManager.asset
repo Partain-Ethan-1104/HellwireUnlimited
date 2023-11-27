@@ -7,6 +7,13 @@ TagManager:
   - Wall
   - Level Swapper 1
   - Level Swapper 2
+  - Level Swapper 3
+  - Level Swapper 4
+  - Level Swapper 5
+  - Level Swapper 6
+  - Level Swapper 7
+  - Level Swapper 8
+  - Level Swapper 9
   layers:
   - Default
   - TransparentFX

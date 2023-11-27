@@ -36,9 +36,31 @@ public class LevelSwapper : MonoBehaviour
     public void sceneToMoveTo2()
     {
         SceneManager.LoadScene("Level 2");
+        print("Level 2 Loaded");
     }
     public void sceneToMoveTo3()
     {
         SceneManager.LoadScene("Level 3");
+        print("Level 3 Loaded");
+    }
+    public void sceneToMoveTo4()
+    {
+        SceneManager.LoadScene("Level 4");
+        print("Level 4 Loaded");
+    }
+    public void sceneToMoveTo5()
+    {
+        SceneManager.LoadScene("Level 5");
+        print("Level 5 Loaded");
+    }
+    public void sceneToMoveTo6()
+    {
+        SceneManager.LoadScene("Level 6");
+        print("Level 6 Loaded");
+    }
+    public void sceneToMoveTo7()
+    {
+        SceneManager.LoadScene("Level 7");
+        print("Level 7 Loaded");
     }
 }
