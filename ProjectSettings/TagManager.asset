@@ -14,6 +14,7 @@ TagManager:
   - Level Swapper 7
   - Level Swapper 8
   - Level Swapper 9
+  - Player Bullet
   layers:
   - Default
   - TransparentFX
