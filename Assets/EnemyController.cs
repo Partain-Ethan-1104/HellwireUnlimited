@@ -10,15 +10,20 @@ public class EnemyController : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject Enemy;
     public float shootCooldown = 2f;
+    public GameObject healthRegenPowerUpPrefab; // Reference to the health regeneration power-up prefab
 
+    private static int enemyCounter; // Counter to track the number of enemies in the room
     private Transform player;
     public float shootTimer = 1f;
     public int enemyHealth = 3;
     public int playerReactivity = 50;
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyCounter = FindObjectsOfType<EnemyController>().Length;
+        Debug.Log("Initial Enemy Count: " + enemyCounter);
     }
+
 
     void Update()
     {
@@ -51,7 +56,16 @@ public class EnemyController : MonoBehaviour
         }
         
         // Dies if Health Equals Zero
-        if (enemyHealth == 0) {
+        if (enemyHealth == 0)
+        {
+            enemyCounter--; // Decrement the enemy counter
+            Debug.Log("Updated Enemy Count: " + enemyCounter);
+
+            if (enemyCounter == 0)
+            {
+                DropPowerUp(); // Call the method to drop power-up
+            }
+
             Destroy(Enemy);
         }
     }
@@ -63,7 +77,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-        void Shoot()
+    void Shoot()
     {
         // Instantiate the projectile
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
@@ -80,4 +94,18 @@ public class EnemyController : MonoBehaviour
         // Set the velocity of the projectile
         projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<ProjectileScript>().speed;
     }
+
+    void DropPowerUp()
+    {
+        // Instantiate the health regeneration power-up at the last enemy's position
+        Instantiate(healthRegenPowerUpPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Power-up Dropped!");
+    }
+    
+    public static void ResetEnemyCounter()
+    {
+        enemyCounter = 0;
+    }
+
+
 }

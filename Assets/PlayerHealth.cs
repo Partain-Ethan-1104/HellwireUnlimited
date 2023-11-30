@@ -27,6 +27,15 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(int healAmount)
+    {
+        // Increase the player's health, but don't exceed the maximum health
+        currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
+
+        // Update the UI
+        UpdateHealthUI();
+    }
+
     void Die()
     {
         // Perform actions when the player dies, e.g., play death animation, respawn, etc.
