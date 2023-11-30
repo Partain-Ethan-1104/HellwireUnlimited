@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1365457451412788943}
   - component: {fileID: 2567127321287620086}
   - component: {fileID: 348934319630237521}
+  - component: {fileID: -6558062743928285538}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -75,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: -359728837
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1970917987607217371, guid: 9c6314050d870a4409074e27c5e79132, type: 3}
+  m_Sprite: {fileID: 2837247941802057891, guid: a3ebf609d64354b47bd06cdd94098ebc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.76153845, y: 1.0076923}
+  m_Size: {x: 3.4461539, y: 3.323077}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -133,7 +134,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3306f10e103c9ec489693765768cece4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  rotationSpeed: 3
+  moveSpeed: 1
   projectilePrefab: {fileID: 5677759154439010145, guid: 7bfa37eaf078f7e4d87a42de5acd7614, type: 3}
+  Enemy: {fileID: 0}
   shootCooldown: 1
+  healthRegenPowerUpPrefab: {fileID: 0}
+  shootTimer: 1
+  enemyHealth: 2
+  playerReactivity: 50
+--- !u!95 &-6558062743928285538
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470922335746901028}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e22847ac70b524d45819269273c9b6c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
