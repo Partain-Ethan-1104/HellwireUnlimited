@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 9 Boss.unity
     guid: 232534243e58899428f801a3980d9e30
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: d7c57853a9bcfa9488b14a51d5e8111c
   m_configObjects: {}

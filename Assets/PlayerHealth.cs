@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -21,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
 
         // Check if the player has run out of health
-        if (currentHealth <= 0)
+        if (currentHealth == 0)
         {
             Die();
         }
@@ -40,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
     {
         // Perform actions when the player dies, e.g., play death animation, respawn, etc.
         Debug.Log("Player has died");
+        SceneManager.LoadScene("Death");
     }
 
     void UpdateHealthUI()

@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     public GameObject Enemy;
     public float shootCooldown = 2f;
     public GameObject healthRegenPowerUpPrefab; // Reference to the health regeneration power-up prefab
-
+    public AudioSource gunfireAudioSource; // Reference to the AudioSource component
     private static int enemyCounter; // Counter to track the number of enemies in the room
     private Transform player;
     public float shootTimer = 1f;
@@ -95,6 +95,11 @@ public class EnemyController : MonoBehaviour
 
         // Set the velocity of the projectile
         projectile.GetComponent<Rigidbody2D>().velocity = direction * projectile.GetComponent<ProjectileScript>().speed;
+        // Play gunfire sound
+        if (gunfireAudioSource != null)
+        {
+            gunfireAudioSource.Play();
+        }
     }
 
     void DropPowerUp()

@@ -17,6 +17,7 @@ public class BossController : MonoBehaviour
 
     public GameObject Boss;
     public int bossHealth = 10;
+    public AudioSource gunfireAudioSource; // Reference to the AudioSource component
 
     // number of bullets
     public int num_projectile = 10;
@@ -107,6 +108,11 @@ public class BossController : MonoBehaviour
 
             // Set the Projectile Velocity
             projectile.GetComponent<Rigidbody2D>().velocity = circlePosition * projectile.GetComponent<ProjectileScript>().speed;
+            // Play gunfire sound
+            if (gunfireAudioSource != null)
+            {
+                gunfireAudioSource.Play();
+            }
         }
     }
 

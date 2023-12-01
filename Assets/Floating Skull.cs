@@ -13,7 +13,7 @@ public class RangedEnemyController : MonoBehaviour
     private static int enemyCounter;
     public int enemyHealth = 3;
     public float shootCooldown = 2f;
-
+    public AudioSource gunfireAudioSource; // Reference to the AudioSource component
     public float preferredDistance = 1f;
     public float shootTimer = 1f;
     public float fireRate = 2f;
@@ -117,6 +117,11 @@ public class RangedEnemyController : MonoBehaviour
 
             // Reposition perpendicularly after shooting
             Reposition();
+            // Play gunfire sound
+            if (gunfireAudioSource != null)
+            {
+                gunfireAudioSource.Play();
+            }
         }
     }
     void Reposition()
