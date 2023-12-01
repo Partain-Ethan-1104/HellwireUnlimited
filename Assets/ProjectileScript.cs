@@ -25,6 +25,6 @@ public class ProjectileScript : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         // Destroy the projectile after a certain time (adjust as needed)
-        Destroy(gameObject, 3.0f);
+        Destroy(gameObject, 100f);
     }
 }

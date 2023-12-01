@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,7 +21,9 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        enemyCounter = FindObjectsOfType<EnemyController>().Length;
+        //enemyCounter = FindObjectsOfType<EnemyController>().Length;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        enemyCounter = enemies.Length;
         Debug.Log("Initial Enemy Count: " + enemyCounter);
     }
 
@@ -43,10 +46,7 @@ public class EnemyController : MonoBehaviour
                 direction = -direction;
             }
 
-            // Rotate towards the player
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotationSpeed * Time.deltaTime);
-
+            
             // Shoot projectiles
             if (Time.time > shootTimer)
             {
@@ -54,19 +54,21 @@ public class EnemyController : MonoBehaviour
                 shootTimer = Time.time + shootCooldown;
             }
         }
+
         
         // Dies if Health Equals Zero
         if (enemyHealth == 0)
         {
-            enemyCounter--; // Decrement the enemy counter
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            enemyCounter = enemies.Length;
             Debug.Log("Updated Enemy Count: " + enemyCounter);
-
-            if (enemyCounter == 0)
+            if (enemyCounter == 1)
             {
                 DropPowerUp(); // Call the method to drop power-up
             }
 
             Destroy(Enemy);
+            
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
