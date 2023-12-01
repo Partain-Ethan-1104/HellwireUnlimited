@@ -6,10 +6,10 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-
     public float bulletForce = 20f;
 
-    // Update is called once per frame
+    public AudioSource gunfireAudioSource; // Reference to the AudioSource component
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -20,8 +20,15 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        // Instantiate bullet
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce((firePoint.up * bulletForce), ForceMode2D.Impulse);
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+        // Play gunfire sound
+        if (gunfireAudioSource != null)
+        {
+            gunfireAudioSource.Play();
+        }
     }
 }
