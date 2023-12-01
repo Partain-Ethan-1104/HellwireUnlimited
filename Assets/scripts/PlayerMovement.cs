@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector2 movement;
 
-    public int roomNumber;
+    //public int roomNumber;
 
     // Update is called once per frame
     void Update()
