@@ -742,15 +742,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4136035696352623853, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.9862854
       objectReference: {fileID: 0}
     - target: {fileID: -4136035696352623853, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 1.9664267
+      objectReference: {fileID: 0}
+    - target: {fileID: -4136035696352623853, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.006859828
       objectReference: {fileID: 0}
     - target: {fileID: -4136035696352623853, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
       propertyPath: m_Offset.y
-      value: -0.25
+      value: -0.40090227
       objectReference: {fileID: 0}
     - target: {fileID: -4136035696352623853, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
       propertyPath: m_Direction
@@ -766,7 +770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3503384000634330023, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
       propertyPath: bossHealth
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -3503384000634330023, guid: 06e8371916a42414996eae9cbc319bc6, type: 3}
       propertyPath: rushDuration
