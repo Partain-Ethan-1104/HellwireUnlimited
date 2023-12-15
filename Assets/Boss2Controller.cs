@@ -69,7 +69,7 @@ public class Boss2Controller : MonoBehaviour
             shootContinuous();
         }
 
-        if (bossHealth == 0)
+        if (bossHealth <= 0)
         {
             Destroy(Boss2);
         }

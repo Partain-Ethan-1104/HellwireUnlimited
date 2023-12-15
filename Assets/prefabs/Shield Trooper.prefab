@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4545542000164809402}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0063109286, w: -0.9999801}
-  m_LocalPosition: {x: -1.27, y: -0.29, z: 0}
-  m_LocalScale: {x: 7.37044, y: -11.738215, z: 1}
+  m_LocalPosition: {x: -1.054, y: 0.074, z: 0}
+  m_LocalScale: {x: 8.06775, y: -5.5253987, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 696115017484501165}
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.8729188}
+  m_Offset: {x: -0.048059303, y: 0.87238336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5035194, y: 0.056055326}
@@ -143,7 +143,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.12658632}
+  m_Size: {x: 0.25553355, y: 0.12765718}
   m_EdgeRadius: 0
 --- !u!50 &7731978180902853523
 Rigidbody2D:
@@ -188,7 +188,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -1.2700016, y: -0.29000095}
+  m_ConnectedAnchor: {x: -1.0540032, y: 0.073999114}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1 &7531124594726202930

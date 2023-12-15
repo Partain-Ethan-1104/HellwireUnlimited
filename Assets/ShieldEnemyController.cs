@@ -24,7 +24,7 @@ public class ShieldEnemyController : MonoBehaviour
         MoveTowardsEnemies();
             
         // Dies if Health Equals Zero
-        if (enemyHealth == 0)
+        if (enemyHealth <= 0)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             enemyCounter = enemies.Length;
@@ -84,10 +84,13 @@ public class ShieldEnemyController : MonoBehaviour
                         // Reverse the direction if a wall is detected
                         direction = -direction;
                     }
-                    
+                    else
+                    { 
+                        // Move using Transform
+                        transform.position = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
+                    }
 
-                    // Move using Transform
-                    transform.position = (Vector2)transform.position + direction * moveSpeed * Time.deltaTime;
+                    
                 }
             }
         }

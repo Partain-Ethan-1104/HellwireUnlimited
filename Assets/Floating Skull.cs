@@ -75,7 +75,7 @@ public class RangedEnemyController : MonoBehaviour
         }
 
         // Dies if Health Equals Zero
-        if (enemyHealth == 0)
+        if (enemyHealth <= 0)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             enemyCounter = enemies.Length;
