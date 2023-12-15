@@ -152,8 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  smoothTime: 0.1
   rb: {fileID: 5446641544091479705}
   animator: {fileID: 5504523776468204984}
+  dashSpeed: 100
+  dashLength: 0.05
+  dashCooldown: 1
 --- !u!70 &2284716976698426741
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -424,6 +428,10 @@ PrefabInstance:
     - target: {fileID: 6386699593533582273, guid: f7665d0418a24f549a0343dda44acee9, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386699593533582273, guid: f7665d0418a24f549a0343dda44acee9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 517747723660246256, guid: f7665d0418a24f549a0343dda44acee9, type: 3}
