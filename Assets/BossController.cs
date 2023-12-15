@@ -16,7 +16,8 @@ public class BossController : MonoBehaviour
     public float reverseDuration = 0.5f;
 
     public GameObject Boss;
-    public int bossHealth = 10;
+    public static int bossMaxHealth = 10;
+    public int bossHealth = bossMaxHealth;
     public AudioSource gunfireAudioSource; // Reference to the AudioSource component
 
     // number of bullets
@@ -32,11 +33,20 @@ public class BossController : MonoBehaviour
     private Vector2 rushDirection;
     private Vector2 initialPosition;
 
+    // for sprites
+    private SpriteRenderer sr;
+    private Animator ani;
+    public Sprite newSprite;
+    public RuntimeAnimatorController newController;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        sr = GetComponent<SpriteRenderer>();
+        ani = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -59,8 +69,18 @@ public class BossController : MonoBehaviour
             }
 
             // shooting only if below 50% health 
-            if ((Time.time > shootTimer) && (bossHealth <= 5))
+            if ((Time.time > shootTimer) && (bossHealth <= bossMaxHealth/2))
             {
+                if (sr != null && newSprite != null)
+                {
+                    sr.sprite = newSprite;
+                }
+
+                if (ani != null && newController != null)
+                {
+                    ani.runtimeAnimatorController = newController;
+                }
+
                 RadialShoot();
                 shootTimer = Time.time + shootCooldown;
             }
@@ -69,6 +89,16 @@ public class BossController : MonoBehaviour
             {
                 StartRush();
                 chargeTimer = Time.time + chargeCooldown;
+            }
+
+            if (direction.x > 0)
+            {
+                sr.flipX = false;
+            }
+
+            if (direction.x < 0)
+            {
+                sr.flipX = true;
             }
         }
 
