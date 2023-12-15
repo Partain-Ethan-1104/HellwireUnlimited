@@ -188,6 +188,7 @@ MonoBehaviour:
   moveSpeed: 5
   projectilePrefab: {fileID: 1504666320461676123, guid: 25b9d3874f7aedd41bad0d29a34a96c7, type: 3}
   healthRegenPowerUpPrefab: {fileID: 1425796505893378846, guid: 151f05d256771224389674d9aa5d90a6, type: 3}
+  otherPowerUpPrefab: {fileID: 1425796505893378846, guid: b4d8991a094cf814c9407a5edcf61655, type: 3}
   Enemy: {fileID: 7173016071024021881}
   enemyHealth: 1
   shootCooldown: 2
