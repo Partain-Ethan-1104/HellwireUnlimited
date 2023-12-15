@@ -6,31 +6,75 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float smoothTime = 0.1f; // Adjust this for smoother movement
 
     public Rigidbody2D rb;
+    //public Animator animator;
 
-    public Animator animator;
-    
     private Vector2 movement;
+    private Vector2 currentVelocity;
 
-    //public int roomNumber;
+    private float activeMoveSpeed;
+    public float dashSpeed;
+    public float dashLength = .5f, dashCooldown = 1;
+    private float dashCounter;
+    private float dashCoolCounter;
 
-    // Update is called once per frame
+    public bool isDashingInvulnerable { get; private set; } = false;
+
+
+    void Start()
+    {
+        activeMoveSpeed = moveSpeed;
+    }
+
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
+        Vector2 inputVector = new Vector2(horizontalInput, verticalInput).normalized;
+
+        //animator.SetFloat("Horizontal", inputVector.x);
+       // animator.SetFloat("Vertical", inputVector.y);
+        //animator.SetFloat("Speed", inputVector.magnitude);
+
+        movement = Vector2.SmoothDamp(movement, inputVector * activeMoveSpeed, ref currentVelocity, smoothTime);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (dashCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+                isDashingInvulnerable = true;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = moveSpeed;
+                dashCoolCounter = dashCooldown;
+                isDashingInvulnerable = false;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
     }
-    //Below is used to change the scene to the next room in the level.
+
+//Below is used to change the scene to the next room in the level.
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Level Swapper 1")
@@ -60,6 +104,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Level Swapper 7")
         {
             LevelSwapper.Instance.sceneToMoveTo9();
+        }
+        if (collision.gameObject.tag == "Level Swapper 2-1")
+        {
+            LevelSwapper.Instance.sceneToMoveTo22();
+        }
+        if (collision.gameObject.tag == "Level Swapper 2-2")
+        {
+            LevelSwapper.Instance.sceneToMoveTo23();
         }
     }
 }

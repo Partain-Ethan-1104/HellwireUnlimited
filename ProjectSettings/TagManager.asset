@@ -17,6 +17,8 @@ TagManager:
   - Player Bullet
   - Enemy
   - Boss
+  - Level Swapper 2-1
+  - Level Swapper 2-2
   layers:
   - Default
   - TransparentFX
