@@ -7,12 +7,15 @@ public class Boss2Controller : MonoBehaviour
     public float moveSpeed = 0.1f;
     public GameObject missilePrefab;
     public GameObject projectilePrefab;
+    public GameObject Boss2;
     public float missileCooldown = 2.5f;
     public int bossHealth = 10;
+    public int currentHealth;
     public float shootReadyCooldown = 10f;
     public float shootCooldown = 3f;
     public float shootDuration = 1f;
     public float projectileSpeedMult = 2f;
+
 
     private Transform player;
 
@@ -26,6 +29,7 @@ public class Boss2Controller : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        currentHealth = bossHealth;
     }
 
     // Update is called once per frame
@@ -63,6 +67,11 @@ public class Boss2Controller : MonoBehaviour
         if (isShooting)
         {
             shootContinuous();
+        }
+
+        if (bossHealth == 0)
+        {
+            Destroy(Boss2);
         }
     }
 
@@ -109,6 +118,7 @@ public class Boss2Controller : MonoBehaviour
         if (collision.gameObject.tag == "Player Bullet")
         {
             bossHealth -= 1;
+            currentHealth = bossHealth;
         }
     }
 

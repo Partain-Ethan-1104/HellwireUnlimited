@@ -101,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 2436129087875009682}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c0809f301fe5e34f984775c9f4abbca, type: 2}
+  m_Controller: {fileID: 9100000, guid: d8e70ce3218352346be84be84b6ca95b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -154,7 +154,6 @@ MonoBehaviour:
   moveSpeed: 10
   smoothTime: 0.1
   rb: {fileID: 5446641544091479705}
-  animator: {fileID: 5504523776468204984}
   dashSpeed: 100
   dashLength: 0.05
   dashCooldown: 1
