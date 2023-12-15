@@ -377,5 +377,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShieldEnemy: {fileID: 7531124594726202930}
   healthRegenPowerUpPrefab: {fileID: 1425796505893378846, guid: 151f05d256771224389674d9aa5d90a6, type: 3}
+  otherPowerUpPrefab: {fileID: 1425796505893378846, guid: b4d8991a094cf814c9407a5edcf61655, type: 3}
   moveSpeed: 5
   enemyHealth: 3

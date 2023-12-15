@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public GameObject Enemy;
     public float shootCooldown = 2f;
     public GameObject healthRegenPowerUpPrefab; // Reference to the health regeneration power-up prefab
+    public GameObject otherPowerUpPrefab;
     public AudioSource gunfireAudioSource; // Reference to the AudioSource component
     private static int enemyCounter; // Counter to track the number of enemies in the room
     private Transform player;
@@ -104,8 +105,14 @@ public class EnemyController : MonoBehaviour
 
     void DropPowerUp()
     {
-        // Instantiate the health regeneration power-up at the last enemy's position
-        Instantiate(healthRegenPowerUpPrefab, transform.position, Quaternion.identity);
+        // Randomly choose between two power-ups with a 50/50 chance
+        int randomChoice = Random.Range(0, 2);
+
+        // Determine which power-up to instantiate based on the random choice
+        GameObject powerUpPrefab = (randomChoice == 0) ? healthRegenPowerUpPrefab : otherPowerUpPrefab;
+
+        // Instantiate the chosen power-up at the last enemy's position
+        Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
         Debug.Log("Power-up Dropped!");
     }
     

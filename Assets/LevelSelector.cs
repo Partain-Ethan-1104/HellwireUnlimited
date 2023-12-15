@@ -18,6 +18,6 @@ public class LevelSelector : MonoBehaviour
     // Update is called once per frame
     public void OpenScene()
     {
-        SceneManager.LoadScene("Level " + level.ToString());
+        SceneManager.LoadScene("Level " + level.ToString() + "-1" );
     }
 }

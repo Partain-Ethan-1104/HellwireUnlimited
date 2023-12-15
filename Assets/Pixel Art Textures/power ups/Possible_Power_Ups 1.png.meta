@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9fee5bcafdc01a447b1f8efb6618dc49
+guid: e9ce9acb06436b649a1545524548184a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,8 +113,8 @@ TextureImporter:
       name: Possible_Power_Ups_0
       rect:
         serializedVersion: 2
-        x: 363
-        y: 56
+        x: 93
+        y: 55
         width: 215
         height: 366
       alignment: 0

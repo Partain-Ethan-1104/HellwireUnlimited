@@ -6,6 +6,7 @@ public class ShieldEnemyController : MonoBehaviour
 {
     public GameObject ShieldEnemy;
     public GameObject healthRegenPowerUpPrefab;
+    public GameObject otherPowerUpPrefab;
     public float moveSpeed = 1f;
     private static int enemyCounter;
     private Transform player;
@@ -46,8 +47,15 @@ public class ShieldEnemyController : MonoBehaviour
 
     void DropPowerUp()
     {
-        // Instantiate the health regeneration power-up at the last enemy's position
-        Instantiate(healthRegenPowerUpPrefab, transform.position, Quaternion.identity);
+        // Randomly choose between two power-ups with a 50/50 chance
+        int randomChoice = Random.Range(0, 2);
+
+        // Determine which power-up to instantiate based on the random choice
+        GameObject powerUpPrefab = (randomChoice == 0) ? healthRegenPowerUpPrefab : otherPowerUpPrefab;
+
+        // Instantiate the chosen power-up at the last enemy's position
+        Instantiate(powerUpPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Power-up Dropped!");
     }
 
     public static void ResetEnemyCounter()
