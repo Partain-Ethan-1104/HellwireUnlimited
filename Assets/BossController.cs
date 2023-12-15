@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BossController : MonoBehaviour
     public float chargeCooldown = 20f;
     public float reverseDuration = 0.5f;
     public int currentHealth;
+
 
     public GameObject Boss;
     public static int bossMaxHealth = 10;
@@ -112,6 +114,8 @@ public class BossController : MonoBehaviour
         if (bossHealth == 0)
         {
             Destroy(Boss);
+            SceneManager.LoadScene("Level 2-1");
+            print("Level 2-1 Loaded");
         }
 
 

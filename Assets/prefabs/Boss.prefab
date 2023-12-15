@@ -145,8 +145,9 @@ MonoBehaviour:
   rushSpeed: 10
   chargeCooldown: 5
   reverseDuration: 0.5
+  currentHealth: 0
   Boss: {fileID: 481196618416998855}
-  bossHealth: 10
+  bossHealth: 30
   gunfireAudioSource: {fileID: 3624326876560263015}
   num_projectile: 12
   newSprite: {fileID: 94850388, guid: dee16832937ccc047a248a68bc341088, type: 3}

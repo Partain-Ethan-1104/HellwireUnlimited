@@ -22,6 +22,6 @@ public class bossHealthBar2 : MonoBehaviour
     void UpdateHealthBar()
     {
         healthAmount = bossHealth.currentHealth;
-        healthBar.fillAmount = healthAmount / 10f;
+        healthBar.fillAmount = healthAmount / 30f;
     }
 }
