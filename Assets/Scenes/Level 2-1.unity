@@ -10831,6 +10831,14 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5504523776468204984, guid: 9c39f569bef226b4288bc1a7afcbfb05, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5504523776468204984, guid: 9c39f569bef226b4288bc1a7afcbfb05, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d8e70ce3218352346be84be84b6ca95b, type: 2}
     - target: {fileID: 7282179800956770947, guid: 9c39f569bef226b4288bc1a7afcbfb05, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.95

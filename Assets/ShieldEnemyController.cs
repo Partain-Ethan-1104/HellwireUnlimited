@@ -20,31 +20,7 @@ public class ShieldEnemyController : MonoBehaviour
 
     void Update()
     {
-<<<<<<< Updated upstream
         MoveTowardsEnemies();
-=======
-        // Move towards other objects tagged as "Enemy"
-        GameObject[] nearbyEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in nearbyEnemies)
-        {
-            Vector2 direction = enemy.transform.position - transform.position;
-            direction.Normalize();
-            // Check for obstacles in the path
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f);
-            if (hit.collider != null && hit.collider.tag == "Wall")
-            {
-                // Reverse the direction if a wall is detected
-                direction = -direction;
-            }
-            if (enemy != gameObject) // Exclude itself from the list
-            {
-                transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
-            }
-            
-        }
->>>>>>> Stashed changes
-
-        
             
         // Dies if Health Equals Zero
         if (enemyHealth == 0)

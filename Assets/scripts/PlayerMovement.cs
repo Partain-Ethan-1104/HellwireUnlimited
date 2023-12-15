@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float smoothTime = 0.1f; // Adjust this for smoother movement
 
     public Rigidbody2D rb;
-    public Animator animator;
+    //public Animator animator;
 
     private Vector2 movement;
     private Vector2 currentVelocity;
@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 inputVector = new Vector2(horizontalInput, verticalInput).normalized;
 
-        animator.SetFloat("Horizontal", inputVector.x);
-        animator.SetFloat("Vertical", inputVector.y);
-        animator.SetFloat("Speed", inputVector.magnitude);
+        //animator.SetFloat("Horizontal", inputVector.x);
+       // animator.SetFloat("Vertical", inputVector.y);
+        //animator.SetFloat("Speed", inputVector.magnitude);
 
         movement = Vector2.SmoothDamp(movement, inputVector * activeMoveSpeed, ref currentVelocity, smoothTime);
 
