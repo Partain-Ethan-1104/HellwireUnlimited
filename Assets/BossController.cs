@@ -14,6 +14,7 @@ public class BossController : MonoBehaviour
     public float rushSpeed = 7f;
     public float chargeCooldown = 20f;
     public float reverseDuration = 0.5f;
+    public int currentHealth;
 
     public GameObject Boss;
     public static int bossMaxHealth = 10;
@@ -47,6 +48,7 @@ public class BossController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         sr = GetComponent<SpriteRenderer>();
         ani = GetComponent<Animator>();
+        currentHealth = bossHealth;
     }
 
     // Update is called once per frame
@@ -187,6 +189,7 @@ public class BossController : MonoBehaviour
         if (collision.gameObject.tag == "Player Bullet")
         {
             bossHealth -= 1;
+            currentHealth = bossHealth;
         }
 
         if (collision.gameObject.CompareTag("Player"))

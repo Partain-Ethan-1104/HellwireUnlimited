@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         //animator.SetFloat("Horizontal", inputVector.x);
        // animator.SetFloat("Vertical", inputVector.y);
-        //animator.SetFloat("Speed", inputVector.magnitude);
+       // animator.SetFloat("Speed", inputVector.magnitude);
 
         movement = Vector2.SmoothDamp(movement, inputVector * activeMoveSpeed, ref currentVelocity, smoothTime);
 
