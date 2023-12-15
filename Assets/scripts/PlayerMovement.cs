@@ -105,5 +105,13 @@ public class PlayerMovement : MonoBehaviour
         {
             LevelSwapper.Instance.sceneToMoveTo9();
         }
+        if (collision.gameObject.tag == "Level Swapper 2-1")
+        {
+            LevelSwapper.Instance.sceneToMoveTo22();
+        }
+        if (collision.gameObject.tag == "Level Swapper 2-2")
+        {
+            LevelSwapper.Instance.sceneToMoveTo23();
+        }
     }
 }

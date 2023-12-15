@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1423191234210891266}
   m_Layer: 8
   m_Name: Hazard Trooper
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,7 @@ MonoBehaviour:
   Enemy: {fileID: 5163716351508803672}
   shootCooldown: 1
   healthRegenPowerUpPrefab: {fileID: 1425796505893378846, guid: 151f05d256771224389674d9aa5d90a6, type: 3}
+  gunfireAudioSource: {fileID: 0}
   shootTimer: 3.0013702
   enemyHealth: 2
   playerReactivity: 50
